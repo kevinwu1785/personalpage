@@ -46,3 +46,13 @@ h2, h3 {
   font-weight: normal;
   margin-top: 2em;
 }
+
+@media screen and (max-width: 600px) {
+  .slideshow-container img {
+    max-width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
