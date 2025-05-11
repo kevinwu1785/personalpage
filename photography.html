@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photography - Kevin Wu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Kevin Wu</h1>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="cv.html">CV</a>
+      <a href="research.html">RESEARCH</a>
+      <a href="teaching.html">TEACHING</a>
+      <a href="photography.html" class="active">PHOTOGRAPHY</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="slideshow-container">
+      <img id="slideshow" src="photo1.jpg" alt="Slideshow" />
+    </div>
+  </main>
+
+  <footer>
+    <p>twu35@ur.rochester.edu</p>
+  </footer>
+
+  <script>
+    const images = ["pic/IMG_4659.jpg", "pic/IMG_4683.jpg", "pic/IMG_4705.jpg", "pic/IMG_4721.jpg", "pic/IMG_5514.jpg", "pic/IMG_7201.jpg"];
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      document.getElementById("slideshow").src = images[index];
+    }, 1000);
+  </script>
+</body>
+</html>
