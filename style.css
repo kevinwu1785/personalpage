@@ -1,27 +1,30 @@
-
 body {
   font-family: sans-serif;
   text-align: center;
 }
+
 nav a {
   margin: 0 10px;
   text-decoration: none;
   color: gray;
 }
+
 nav a.active {
   color: black;
   font-weight: bold;
 }
+
+/* 所有圖片通用設定 */
 img {
   width: 50%;
   max-width: 600px;
+  max-height: 80vh;         /* 限制圖片高度不超過視窗高度的 80% */
+  object-fit: contain;      /* 確保圖片縮放不變形 */
   margin-top: 20px;
+  height: auto;
 }
-footer {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #444;
-}
+
+/* 輪播容器圖片額外樣式 */
 .slideshow-container {
   text-align: center;
   margin-top: 30px;
@@ -29,11 +32,14 @@ footer {
 
 .slideshow-container img {
   max-width: 60%;
-  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: auto;
 }
 
+/* 內文容器設定 */
 .container {
   width: 90%;
   max-width: 800px;
@@ -42,17 +48,18 @@ footer {
   text-align: left;
 }
 
+/* 標題格式 */
 h2, h3 {
   font-weight: normal;
   margin-top: 2em;
 }
 
+/* 手機版優化：讓圖片全寬、不要超出 */
 @media screen and (max-width: 600px) {
-  .slideshow-container img {
-    max-width: 100%;
-  }
-
+  .slideshow-container img,
   img {
     width: 100%;
+    max-width: 100%;
+    max-height: 80vh;
   }
 }
