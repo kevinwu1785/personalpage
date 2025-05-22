@@ -18,7 +18,7 @@ nav a.active {
 img {
   width: 50%;
   max-width: 600px;
-  max-height: 80vh;         /* 限制圖片高度不超過視窗高度的 80% */
+  max-height: 60vh;         /* 限制圖片高度不超過視窗高度的 80% */
   object-fit: contain;      /* 確保圖片縮放不變形 */
   margin-top: 20px;
   height: auto;
@@ -32,10 +32,9 @@ img {
 
 .slideshow-container img {
   max-width: 60%;
-  max-height: 80vh;
+  max-height: 60vh;
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   height: auto;
 }
 
