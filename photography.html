@@ -27,20 +27,31 @@
 
  
   <script>
-    const images = ["pic/IMG_3959.jpg","pic/IMG_3947.jpeg","pic/IMG_3921.jpg","pic/IMG_3910.jpg","pic/IMG_3901.jpg","pic/IMG_3881.jpg","pic/IMG_3865.jpg",
-                    "pic/IMG_3754.jpg","pic/IMG_3714.jpg","pic/IMG_3546.jpeg","pic/IMG_3434.jpg","pic/IMG_3362.jpg","pic/IMG_3258.jpg","pic/IMG_3208.jpg",
-                    "pic/IMG_3197.jpg","pic/IMG_2961.jpg","pic/IMG_2829.jpg","pic/IMG_2409.jpg","pic/IMG_2359.jpg",
+    const images = ["pic/IMG_3959.jpg","pic/IMG_3921.jpg","pic/IMG_3901.jpg","pic/IMG_3881.jpg",
+                    "pic/IMG_3754.jpg","pic/IMG_3714.jpg","pic/IMG_3434.jpg","pic/IMG_3258.jpg","pic/IMG_3208.jpg",
+                    "pic/IMG_2961.jpg","pic/IMG_2829.jpg","pic/IMG_2409.jpg","pic/IMG_2359.jpg",
                     "pic/DSC01544.JPG", "pic/DSC03489.JPG","pic/DSC03667.JPG","pic/DSC03679.JPG","pic/DSC03694.JPG","pic/DSC03709.JPG","pic/DSC03758.JPG",
                     "pic/DSC03909.JPG","pic/DSC05408.JPG","pic/DSC05692.JPG","pic/DSC06347.JPG","pic/DSC06839.JPG","pic/DSC04994.JPG", "pic/DSC05029.JPG", 
                     "pic/DSC05277.JPG", "pic/DSC06508.JPG", "pic/DSC07149.JPG", "pic/DSC07167.JPG", "pic/IMG_4659.jpg", 
                     "pic/IMG_4683.jpg", "pic/IMG_4705.jpg", "pic/IMG_4721.jpg", "pic/IMG_5514.jpg", "pic/IMG_7201.jpg",
                     "pic/IMG_7243.jpg", "pic/IMG_7362.jpg", "pic/IMG_7606.jpg", "pic/IMG_7774.jpg"];
-    let index = 0;
+    
 
-    setInterval(() => {
-      index = (index + 1) % images.length;
-      document.getElementById("slideshow").src = images[index];
-    }, 5000);
-  </script>
+for (let i = images.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [images[i], images[j]] = [images[j], images[i]];
+}
+
+let index = 0;
+
+// Show the first randomized image
+document.getElementById("slideshow").src = images[index];
+
+setInterval(() => {
+  index = (index + 1) % images.length;
+  document.getElementById("slideshow").src = images[index];
+}, 5000);
+
+</script>
 </body>
 </html>
